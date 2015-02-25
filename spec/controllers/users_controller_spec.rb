@@ -32,7 +32,14 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "#update" do
+    it "returns the json of the updated user" do
+      user = create_user
 
+      patch :update, id: user, user: {email: 'new@email.com'}
+      expect(response.status).to be(200)
+      response_array = JSON.parse(response.body)
+      expect(user.reload.email).to eq("new@email.com")
+    end
   end
 
   describe "#destroy" do
