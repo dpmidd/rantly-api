@@ -46,7 +46,6 @@ RSpec.describe UsersController, type: :controller do
     it "users can delete themselves" do
       user1 = create_user
       user2 = create_user
-      session[:user_id] = user1.id
       delete :destroy, id: user1
       expect(User.count).to eq(1)
     end
