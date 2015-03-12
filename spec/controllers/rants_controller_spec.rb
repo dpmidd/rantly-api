@@ -23,9 +23,20 @@ RSpec.describe RantsController, type: :controller do
 
     get :show, user_id: user.id, id: rant1.id
 
-    expect(response.status).to be(200)
     response_array = JSON.parse(response.body)["rants"]
     expect(response_array[0]["title"]).to eq(rant1.title)
+    end
+  end
+
+  describe "#create" do
+    it "creates JSON of a users rant" do
+      user = create_user
+      post :create, user_id: user.id, rant: {
+        user_id: user.id,
+        title: "new title",
+        body: "new body"
+        }
+      expect(response.status).to be(200)
     end
   end
 

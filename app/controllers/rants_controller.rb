@@ -11,6 +11,17 @@ class RantsController < ApplicationController
     render json: @rant
   end
 
+  def create
+    @user = User.find(params[:user_id])
+    @rant = Rant.new(rant_params)
+    @rant.user_id = @user.id
+    if @rant.save
+      render json: @user.rants.all
+    else
+      raise "oh no!"
+    end
+  end
+
   def update
     @user = User.find(params[:user_id])
     @rant = @user.rants.find(params[:id])
