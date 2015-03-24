@@ -4,7 +4,6 @@ gem 'rails', '4.2.0'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'faker', '~> 1.4.3'
 gem 'pg'
-gem 'jbuilder', '~> 2.0'
 gem 'bcrypt-ruby', '~> 3.1.5'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -18,3 +17,4 @@ group :development, :test do
 end
 
 gem 'devise'
+gem 'rails_12factor', group: :production
