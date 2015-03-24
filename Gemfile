@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
+gem 'rack-cors', :require => 'rack/cors'
 gem 'faker', '~> 1.4.3'
 gem 'pg'
 gem 'jbuilder', '~> 2.0'
