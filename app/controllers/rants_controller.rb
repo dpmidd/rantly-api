@@ -1,5 +1,7 @@
 class RantsController < ApplicationController
 
+  skip_before_filter :authenticate_user!
+
   def index
     @user = User.find(params[:user_id])
     render json: @user.rants.all
