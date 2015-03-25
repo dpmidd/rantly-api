@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'active_model_serializers'
 gem 'rails', '4.2.0'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'faker', '~> 1.4.3'
