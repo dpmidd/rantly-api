@@ -24,7 +24,7 @@ class RantsController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:rant][:user_id])
     @rant = @user.rants.find(params[:id])
     if @rant.update(rant_params)
       render json: @rant
